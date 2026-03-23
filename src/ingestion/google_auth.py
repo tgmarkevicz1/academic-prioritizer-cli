@@ -17,7 +17,7 @@ def get_service(service_name, version):
 
     if not creds:
         flow = InstalledAppFlow.from_client_secrets_file(
-            "credentials.json", SCOPES
+            ".env/credentials.json", SCOPES
         )
         creds = flow.run_local_server(port=0)
 
