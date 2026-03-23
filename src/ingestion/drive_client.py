@@ -1,8 +1,7 @@
+import os
 from .google_auth import get_service
 
-from .google_auth import get_service
-
-FOLDER_ID = "your_folder_id_here"  # replace with your Google Drive folder ID
+FOLDER_ID = os.environ.get("GOOGLE_DRIVE_FOLDER_ID")
 
 def get_files_in_folder(service, folder_id):
     """Recursively get all files within a folder and its subfolders."""
