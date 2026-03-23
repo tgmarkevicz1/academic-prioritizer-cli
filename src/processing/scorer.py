@@ -1,8 +1,8 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 def score(task):
     score = 0
-    now = datetime.now()
+    now = datetime.now(timezone.utc) 
 
     # Deadline proximity
     if task.deadline:
