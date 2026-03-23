@@ -2,3 +2,5 @@
 .DS_Store
 secrets/
 token.json
+*/__pycache__
+*/*/__pycache__
