@@ -1,9 +1,12 @@
 import os
 import stat
+from dotenv import load_dotenv
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+
+load_dotenv()  # loads .env into environment variables
 
 SCOPES = [
     "https://www.googleapis.com/auth/drive.metadata.readonly",
