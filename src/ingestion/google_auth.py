@@ -6,14 +6,20 @@ from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
-load_dotenv()  # loads .env into environment variables
+load_dotenv()
 
 SCOPES = [
     "https://www.googleapis.com/auth/drive.metadata.readonly",
-    "https://www.googleapis.com/auth/calendar.readonly"
+    "https://www.googleapis.com/auth/calendar.readonly",
+    "https://www.googleapis.com/auth/tasks.readonly",
 ]
 
-ALLOWED_SERVICES = {"drive": "v3", "calendar": "v3"}
+ALLOWED_SERVICES = {
+    "drive": "v3",
+    "calendar": "v3",
+    "tasks": "v1",
+}
+
 CREDENTIALS_PATH = os.environ.get("GOOGLE_CREDENTIALS_PATH", "secrets/credentials.json")
 TOKEN_PATH = os.environ.get("GOOGLE_TOKEN_PATH", "token.json")
 

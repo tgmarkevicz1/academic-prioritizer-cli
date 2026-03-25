@@ -1,6 +1,7 @@
 from .google_auth import get_service
 from datetime import datetime, timedelta, timezone
 
+
 def get_calendar_events():
     service = get_service("calendar", "v3")
 
@@ -12,7 +13,7 @@ def get_calendar_events():
         timeMin=now,
         timeMax=week,
         singleEvents=True,
-        orderBy="startTime"
+        orderBy="startTime",
     ).execute()
 
     return events.get("items", [])
